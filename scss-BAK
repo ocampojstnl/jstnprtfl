@@ -1,0 +1,201 @@
+// Colors
+$primary-color :  #4086a0;
+$secondary-color : #fff;
+$tertiary-color: #000;
+$fourth-color : #f5f5f5;
+$fifth-color: #ff0050;
+$sixth-color: #00f2ea;
+
+// Borders
+$border-radius: 7px;
+
+// Transitions
+$transition-speed : 0.4s;
+
+// Shadows
+$tiktok-feel: drop-shadow(-4px -4px 0 $sixth-color) drop-shadow(4px 4px 0 $fifth-color);
+$text-shadow-tiktok : -2px -2px 0 $sixth-color, 2px  2px 0 $fifth-color;
+$page-title-shadow: 12px 14px rgba(0, 0, 0, 0.07);
+* {
+    margin: unset;
+    padding: unset;
+    outline: none;
+    font-family: "Poppins", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Outfit", sans-serif;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: unset;
+    color: $tertiary-color;
+    transition: all $transition-speed;
+    // &:hover {
+    //     color: $primary-color;
+    // }
+    &.primary-bg {
+        color: $secondary-color;
+        &:hover {
+            background-color: $tertiary-color;
+            color: $secondary-color;
+        }
+    }
+}
+
+p {
+    font-size: 15px;
+}
+
+.page-title {
+    text-shadow: $page-title-shadow;
+    font-size: 5.5vw;
+    font-weight: 700;
+}
+
+.primary-bg {
+    background-color: $tertiary-color!important;
+}
+
+.btn {
+    border-radius: $border-radius;
+    text-transform: capitalize;
+    transition: all $transition-speed;
+    background-color: $secondary-color;
+    &:hover {
+        background-color: $primary-color;
+        color: $secondary-color;
+        transform: translate(3px, 3px);
+        filter: $tiktok-feel;
+    }
+}
+
+
+// Sliding text
+.sliding-text-section {
+    height: 10em;
+    overflow: hidden;
+    position: relative;
+    &:before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg,rgba(255, 255, 255, 1) 5%, rgba(255, 255, 255, 0) 100%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+}
+
+.sliding-text-track {
+    display: flex;
+    width: max-content;
+    position: absolute;
+    white-space: nowrap;
+    animation: slide-left 40s linear infinite;
+    height: 100%;
+}
+
+.sliding-text-track h2 {
+    font-size: 7em;
+    color: rgba(0, 0, 0, .2);
+    line-height: 1.2;
+    margin: 0;
+    padding-right: 100px; /* spacing between duplicates */
+}
+
+@keyframes slide-left {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+// Header section
+
+#site-header {
+    .container-fluid {
+        .d-flex {
+            .logo {
+                a {
+                    h2 {
+                        font-weight: 800;
+                        text-shadow: $text-shadow-tiktok;  
+                    }
+                }
+            }
+            .search-bar {
+                width: -webkit-fill-available;
+                max-width: 50%;
+                padding: 0 0 0 20px;
+                #header-search {
+                    height: 100%;
+                    input {
+                        height: 100%;
+                        background-color: $fourth-color;
+                        border-radius: 7px;
+                        width: 100%;
+                    }
+                }
+            }
+            .header-menu {
+                margin-left: auto;
+                .menu-items {
+                    height: 100%;
+                    .menu-item {
+                        list-style-type: none;
+                        margin-left: 24px;
+                        height: 100%;
+                        transition: all $transition-speed;
+                        &:hover {
+                            opacity: 0.4;
+                        }
+                        .menu-link {
+                            height: 100%;
+                            font-size: 14px;
+                        }
+                        &:first-child {
+                            margin-left: unset;
+                        }
+                    }
+                }
+            }
+            .header-btns {
+                margin-left: 30px;
+                .btn{
+                    padding-left: 30px;
+                    padding-right: 30px;
+                    border-color: $primary-color!important;
+                    &.primary-bg {
+                        margin-right: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Hero section
+.section-hero-banner {
+    .container { 
+        .hero-tagline {
+            font-size: 1.2vw;
+            text-align: center;
+            max-width: 70%;
+            margin: 0 auto;
+        }
+        .row {
+            .col-sm {
+                transition: all $transition-speed;
+                &:hover {
+                    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+                }
+            }
+        }
+    }
+}

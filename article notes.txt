@@ -1,0 +1,10 @@
+Wave conflict background color and font color fix
+Resizing the v2 recaptcha
+Luxy JS sticky fix
+
+
+
+/// Design inspiration
+
+https://www.marcfriedmanportfolio.com/
+https://shakuro.com/
